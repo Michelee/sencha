@@ -3,7 +3,8 @@ Ext.define('Sencha.view.Main', {
     xtype : 'main',
     requires : [
             'Sencha.view.Header', //Llama al la vista que tiene el header
-            'Sencha.view.Filters'
+            'Sencha.view.Filters',
+            
         ],
         config : {
             layout  : 'vbox',
@@ -12,11 +13,8 @@ Ext.define('Sencha.view.Main', {
             },{ 
                 xtype   : 'filters'  //Step 2
             },{
-                //we are going to move this container to a class
-                xtype   : 'component',
-                flex    : 1,
-                style   : 'background:#ecf0f1', //we will remove this later
-                html    : 'The Results'
+                xtype   : 'results', //Step 2
+                flex    : 1
             }]
         }
 });
