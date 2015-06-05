@@ -13,7 +13,7 @@ Ext.define('Sencha.view.Results', {
             {text:'Duration',dataIndex:'duration'},
             {text:'Albumn',dataIndex:'albumn'},
             {text:'Genre',dataIndex:'genre'},
-            {text:'Price',dataIndex:'artwork'},
+            {text:'Price',dataIndex:'price'} //<--- FIX
         ],
         store   : {   //El store es para guardar la info 
             //we are going to use a class for this later
