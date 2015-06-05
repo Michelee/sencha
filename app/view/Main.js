@@ -1,21 +1,19 @@
-Ext.define('Itunes.view.Main', {
+Ext.define('Sencha.view.Main', {
     extend: 'Ext.Container',
     xtype : 'main',
     requires : [
-        
-    ],
-    config : {
-        layout  : 'vbox',                  //Step 1
-        items   : [{
-            xtype   : 'container',
-            height  : 120,                 //Step 2
-            style   : 'background:#bdc3c7',
-            html    : 'The Header'
-        },{
-            xtype   : 'component',
-            flex    : 1,                   //Step 3
-            style   : 'background:#ecf0f1',
-            html    : 'Te Results'
-        }]
-    }
+            'Sencha.view.Header' //Llama al la vista que tiene el header
+        ],
+        config : {
+            layout  : 'vbox',
+            items   : [{
+                xtype   : 'header'  //Step 2
+            },{
+                //we are going to move this container to a class
+                xtype   : 'component',
+                flex    : 1,
+                style   : 'background:#ecf0f1', //we will remove this later
+                html    : 'The Results'
+            }]
+        }
 });
