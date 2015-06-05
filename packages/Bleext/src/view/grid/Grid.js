@@ -13,28 +13,56 @@ Ext.define('Bleext.view.grid.Grid', {
     ],
 
     config: {
-    	layout      : 'fit',    //Step 2
+        layout      : 'fit',
         columns     : null,
         store       : null,
         tplColumns  : [
-            '<tpl for="columns">',    //Step 1
-                '<tpl if="width">',   //Step 2
-                '<div class="bleext-column-header" style="width:{width}px;">{text}</div>',
-                '<tpl else>',         //Step 3
-                '<div class="bleext-column-header" style="flex:{flex}">{text}</div>',
+            '<tpl for="columns">',
+                '<tpl if="width">',
+                //adding the data-index
+                '<div data-index="{[xindex - 1]}" class="bleext-column-header" style="width:{width}px;">{text}</div>',
+                '<tpl else>',
+                //adding the data-index
+                '<div data-index="{[xindex - 1]}" class="bleext-column-header" style="flex:{flex}">{text}</div>',
                 '</tpl>',
             '</tpl>'
         ].join('')
     },
 
-    initialize  : function(){   //Step 2
-        var me = this;
+    initialize  : function(){
+        var me = this,
+            dataview;
 
         me.add(me.buildColumns());
-        me.add(me.buildDataview()); //Step 3
+        dataview = me.add(me.buildDataview()); //Step 1
 
         me.callParent(arguments);
+
+        me.element.on('tap',me.handleCustomEvents,me);
+
+        //step 2
+        me.relayEvents(dataview,[
+            'itemtap','itemdoubletap','itemsingletap','itemswipe','itemtaphold',
+            'itemtouchend','itemtouchmove','itemtouchstart','select','refresh'
+        ]);
     },
+
+    handleCustomEvents  : function(event){
+	    var me  = this,
+	        //Step 1
+	        dom = event.getTarget('.bleext-grid-header-container .bleext-column-header'),
+	        column,
+	        index;
+
+	    if(dom){
+	        index = Ext.fly(dom).getAttribute('data-index'); //Step 2
+	        
+	        column = me.getColumns()[index];
+	        column.direction = column.direction === 'ASC'?'DESC':'ASC'; //Step 3
+	        
+	        this.fireEvent('sort',column.dataIndex,column.direction,column); //Step 4
+	    }
+	},
 
     applyStore      : function(store){ //Step 3
         return Ext.data.StoreManager.lookup(store); //Step 4
@@ -96,6 +124,7 @@ Ext.define('Bleext.view.grid.Grid', {
 
         return {
             xtype   : 'dataview',
+            cls     : 'bleext-grid-body',
             store   : store,
             itemTpl : tpl
         };

@@ -37,6 +37,13 @@ Ext.define('Sencha.view.Results', {
                 }
                 return data;
             })()
+        },
+        
+        listeners : { //Step 1
+            sort : function(dataIndex,direction,column){ //Step 2
+                //Step 3
+                Ext.Msg.alert('Sort','DataIndex: '+dataIndex+' Direction: '+direction);
+            }
         }
     }
 });
