@@ -1,0 +1,23 @@
+{
+  "data": {
+    "created": "2015-03-27T18:18:05Z",
+    "email": "anonymous",
+    "expires": "2020-03-28T00:00:00Z",
+    "name": "anonymous",
+    "uuid": "b31932c4-ad81-4479-a43f-93b34018523b"
+  },
+  "publicKey": {
+    "algorithm": "RSA",
+    "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmjvrap5ht0tiq8cBkTiFSnHHWIQvxgBub+yb9w95wRFilJKZsigLJu4hKM7mMBtTlgepwHKmsLHxo9VPO576LFQJ7maCDvn85KlYaSH11hXPYTFu+jhuj0r/ABVUFSjAi5JqQac7UJU3qbrXH1b6r8jEcPm/BKg1trhu04Wz9rvwhrhuCYNnlc+La1zvmWINv0K8dd0p33a1bRz5kRCuI71/LJskBRaFqywh27cAw+K9+CVM/Bzes68Qo8Pec1KegxA2Io41FmSORalFtnauqbmgVsW3E+L4CEN7S8QWqgClybWaitXDN+z2Cdt1SpBj77xDXimmmF9QB/m1Wz7+kQIDAQAB"
+  },
+  "signatures": [
+    {
+      "name": "anonymous",
+      "uuid": "b31932c4-ad81-4479-a43f-93b34018523b",
+      "created": "2015-03-27T18:18:06Z",
+      "algorithm": "SHA1withRSA",
+      "nonce": "urIss/Tu7zE\u003d",
+      "signature": "efcR2m+NFfmi6zIZYFM9poCFDsfHq2I9vc1zVZxoplynlmWxDPmJyaV4UoxVbLexpzutiJMhxModR5flcgYtlqFhjOixh0g+NeMvDkrfSbscihhGfSoFFDHH8s1Si6EoiDH4ug4TfxCqaS0Tz07uEkWA9+EbKK2z8P+hdOEXX3wiVutN7uf8IX126/TXOlbvI3quWfbUVwONaHK7hf0SC6rLrOq8R34nIIPA7KgzrbZL6SY5R53ulItUdZNHI8MiRNsYwe6Y/NgRtWLfsI7MrtRyB4peaYXQGhBlypVKk3umwyKEzhQldr2lkkio0lo4HZce45Xf78dEs+fmgS65cQ\u003d\u003d"
+    }
+  ]
+}
