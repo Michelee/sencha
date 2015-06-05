@@ -7,13 +7,15 @@ Ext.define('Sencha.view.Results', {
 
     config: {
         columns : [ //Se definen las columnas, los dataindex son para llenar los resultados de esas columnas
-            {text:'Art',dataIndex:'artwork'},
+//Step 1
+            {text:'Art',dataIndex:'artwork',tpl:'<img src="{artwork}" />'},
             {text:'Name',dataIndex:'name'},
             {text:'Artist',dataIndex:'artist'},
             {text:'Duration',dataIndex:'duration'},
             {text:'Albumn',dataIndex:'albumn'},
             {text:'Genre',dataIndex:'genre'},
-            {text:'Price',dataIndex:'price'} //<--- FIX
+            //Step 2
+            {text:'Price',dataIndex:'price',renderer:function(value){return value + value * 0.1}} //<--- FIX
         ],
         store   : {   //El store es para guardar la info 
             //we are going to use a class for this later
